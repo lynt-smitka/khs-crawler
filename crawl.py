@@ -9,6 +9,7 @@ from libs import kraj_usti
 from libs import kraj_par
 from libs import kraj_kv
 from libs import kraj_plz
+from libs import kraj_strc
 
 import pygsheets
 import pandas as pd
@@ -21,7 +22,7 @@ gc = pygsheets.authorize(service_file='./conf/crawling_auth.json')
 sh = gc.open_by_key('1FFEDhS6VMWon_AWkJrf8j3XxjZ4J6UI1B2lO3IW-EEc')
 wks = sh.worksheet_by_title('Test crawl')
 
-df = wks.get_as_df(include_tailing_empty=False, include_tailing_empty_rows=False)
+df = wks.get_as_df(include_tailing_empty=False, include_tailing_empty_rows=False, numerize=False)
 df = df.set_index('Okres')
 
 kraje = [
@@ -35,6 +36,7 @@ kraje = [
   kraj_par.web().crawl(),
   #kraj_kv.web().crawl(),
   kraj_plz.web().crawl(),
+  kraj_strc.web().crawl(),
   
   ]
 
@@ -45,6 +47,6 @@ for okresy in kraje:
     df.at[okres['okres'], date] = okres['hodnota']
 
 wks.clear()
-wks.set_dataframe(df,(1,1),copy_index=True)
-
+wks.set_dataframe(df,(1,1),copy_index=True, nan='-')
+wks.update_value('A1','Okres')
 
