@@ -10,6 +10,7 @@ from libs import kraj_par
 from libs import kraj_kv
 from libs import kraj_plz
 from libs import kraj_strc
+from libs import kraj_pha
 
 import pygsheets
 import pandas as pd
@@ -37,6 +38,7 @@ kraje = [
   #kraj_kv.web().crawl(),
   kraj_plz.web().crawl(),
   kraj_strc.web().crawl(),
+  kraj_pha.web().crawl(),
   
   ]
 

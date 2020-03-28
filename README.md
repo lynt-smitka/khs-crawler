@@ -21,7 +21,6 @@ Výstupy: [https://docs.google.com/spreadsheets/d/1FFEDhS6VMWon_AWkJrf8j3XxjZ4J6U
 - Jihomoravský kraj - každý den nové PDF, asi by šlo najít vždy vhodné nejnovìjší
 - Karlovarský kraj - 28.3. odstranili z PDF data o okresech
 - Moravskoslezský kraj - data v obrázkových sloupcových grafech - umístìní hodnoty se mìní... dále je  k dispozici obrázek na homepage, ale sám mám problém ho pøeèíst...
-- Praha - jen jedno èíslo, zatím jsem byl líný kvùli jednou èíslu psát skript :-)
 - Zlínský kraj - každý den se mìní PDF, ale asi realizovatelné
 
 
