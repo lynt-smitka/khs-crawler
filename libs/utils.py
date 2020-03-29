@@ -105,5 +105,6 @@ def get_pdfminer(url):
         layout = device.get_result()
     
     return parse_lt_objs(layout).split('\n')
+
     
     

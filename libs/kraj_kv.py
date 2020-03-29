@@ -12,7 +12,6 @@ class web:
 
     i=0
     for l in lines:
-        print(l)
         i=i+1
         if i<10:
             continue

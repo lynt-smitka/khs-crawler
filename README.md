@@ -14,6 +14,8 @@ Použité knihovny:
  - **Pillow** - práce s obrázky
  - **pytesseract** - OCR pomocí [Tesseract](https://tesseract-ocr.github.io/)
 
+Motivace: https://twitter.com/marekl/status/1243188839415414784
+
 Informace o zdrojích: [https://www.sablatura.info/covid/hygienicke-stanice/](https://www.sablatura.info/covid/hygienicke-stanice/)
 
 Výstupy: [https://docs.google.com/spreadsheets/d/1FFEDhS6VMWon_AWkJrf8j3XxjZ4J6UI1B2lO3IW-EEc](https://docs.google.com/spreadsheets/d/1FFEDhS6VMWon_AWkJrf8j3XxjZ4J6UI1B2lO3IW-EEc)
