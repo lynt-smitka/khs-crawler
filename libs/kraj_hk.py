@@ -23,26 +23,26 @@ class web:
     kraj = self.kraj
 
     if 'Hr.Králové' in td.text:
-        val = tds[i+7].text.strip()
+        val = tds[i+8].text.strip()
         return { 'okres':'Hradec Králové', 'kraj': kraj,  'hodnota':val}
         
     if 'Jičín' in td.text:
-        val = tds[i+7].text.strip()
+        val = tds[i+8].text.strip()
         return { 'okres':'Jičín', 'kraj': kraj,  'hodnota':val}
 
     
     if 'Náchod' in td.text:
-        val = tds[i+7].text.strip()
+        val = tds[i+8].text.strip()
         return { 'okres':'Náchod', 'kraj': kraj,  'hodnota':val}
 
  
     if 'Rychnov' in td.text:
-        val = tds[i+7].text.strip()
+        val = tds[i+8].text.strip()
         return { 'okres':'Rychnov nad Kněžnou', 'kraj': kraj,  'hodnota':val}
 
         
     if 'Trutnov' in td.text:
-        val = tds[i+7].text.strip()
+        val = tds[i+8].text.strip()
         return { 'okres':'Trutnov', 'kraj': kraj,  'hodnota':val}
         
 
