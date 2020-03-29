@@ -10,7 +10,7 @@ Použité knihovny:
 
  - **requests** + **BeautifulSoup** - parsování dat z webù
  - **PyPDF2** - parsování dat z relativnì dobøe strukturovaných PDF
- - **pdfminer** - nízkoúrovòovìjší parsování dat z hùøe strukturovaných PDF  
+ - **pdfminer.six** - nízkoúrovòovìjší parsování dat z hùøe strukturovaných PDF  
  - **Pillow** - práce s obrázky
  - **pytesseract** - OCR pomocí [Tesseract](https://tesseract-ocr.github.io/)
 
@@ -21,8 +21,9 @@ Informace o zdrojích: [https://www.sablatura.info/covid/hygienicke-stanice/](htt
 Výstupy: [https://docs.google.com/spreadsheets/d/1FFEDhS6VMWon_AWkJrf8j3XxjZ4J6UI1B2lO3IW-EEc](https://docs.google.com/spreadsheets/d/1FFEDhS6VMWon_AWkJrf8j3XxjZ4J6UI1B2lO3IW-EEc)
 
 ## Chybìjící kraje:
-- Karlovarský kraj - 28.3. odstranili z PDF data o okresech
 - Moravskoslezský kraj - data v obrázkových sloupcových grafech - umístìní hodnoty se mìní... dále je  k dispozici obrázek na homepage, ale sám mám problém ho pøeèíst...
-- Zlínský kraj - každý den se mìní PDF, ale asi realizovatelné
+
+## Další problémy
+- Ústecký kraj - z PDF se nadaøí získat info o Litomìøicích
 
 

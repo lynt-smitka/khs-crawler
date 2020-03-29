@@ -21,8 +21,8 @@ class web:
             results.append({ 'okres':'Chomutov', 'kraj': self.kraj, 'hodnota':lines[i]})
         if 'Most' in l:
             results.append({ 'okres':'Most', 'kraj': self.kraj, 'hodnota':lines[i]})
-        if 'ice' in l:
-            results.append({ 'okres':'Litoměřice', 'kraj': self.kraj, 'hodnota':lines[i]})
+#        if 'ice' in l:
+#            results.append({ 'okres':'Litoměřice', 'kraj': self.kraj, 'hodnota':lines[i]})
         if 'Louny' in l:
             results.append({ 'okres':'Louny', 'kraj': self.kraj, 'hodnota':lines[i]} )
         if 'Teplice' in l:
