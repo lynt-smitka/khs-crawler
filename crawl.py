@@ -36,7 +36,7 @@ kraje = [
   kraj_olo.web().crawl(),
   kraj_usti.web().crawl(),
   kraj_par.web().crawl(),
-  #kraj_kv.web().crawl(),
+  kraj_kv.web().crawl(),
   kraj_plz.web().crawl(),
   kraj_strc.web().crawl(),
   kraj_pha.web().crawl(),
