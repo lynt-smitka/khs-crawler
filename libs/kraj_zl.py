@@ -26,14 +26,14 @@ class web:
         if 'okres Kroměříž' in line:
             p1=i
         if 'Zdroj: KHS ZK' in line:
-            p2=i+17
+            p2=i+11
+            break
         i=i+1
       return (p1,p2)
 
     offset=calculate_offset(lines)
 
-    mesta= ['Kroměříž', 'Uherské Hradiště', 'Vsetín','Zlín' ]
-    offsets = [0,2,4,6]
+
     for i in range(0,4):
-      results.append({ 'okres':mesta[i], 'kraj': self.kraj, 'hodnota': lines[offset[1]+offsets[i]]})
+      results.append({ 'okres':lines[offset[0]+i*2].replace('okres','').strip(), 'kraj': self.kraj, 'hodnota': lines[offset[1]+i*2]})
     return results

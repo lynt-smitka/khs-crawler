@@ -34,6 +34,6 @@ class web:
     offset=calculate_offset(lines)
 
     for i in range(0,7):
-      results.append({ 'okres':lines[offset[0]+i].strip(), 'kraj': self.kraj, 'hodnota': lines[offset[1]+i]})
+      results.append({ 'okres':lines[offset[0]+i].strip(), 'kraj': self.kraj, 'hodnota': lines[offset[0]+9+i]})
 
     return results

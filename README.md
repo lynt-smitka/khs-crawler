@@ -9,8 +9,7 @@ Prototyp skriptù pro crawling dat jednotlivých KHS.
 Použité knihovny:
 
  - **requests** + **BeautifulSoup** - parsování dat z webù
- - **PyPDF2** - parsování dat z relativnì dobøe strukturovaných PDF
- - **pdfminer.six** - nízkoúrovòovìjší parsování dat z hùøe strukturovaných PDF  
+ - **pdfminer.six** - parsování dat z PDF  
  - **Pillow** - práce s obrázky
  - **pytesseract** - OCR pomocí [Tesseract](https://tesseract-ocr.github.io/)
 
@@ -23,7 +22,5 @@ Výstupy: [https://docs.google.com/spreadsheets/d/1FFEDhS6VMWon_AWkJrf8j3XxjZ4J6U
 ## Chybìjící kraje:
 - Moravskoslezský kraj - data v obrázkových sloupcových grafech - umístìní hodnoty se mìní... dále je  k dispozici obrázek na homepage, ale sám mám problém ho pøeèíst...
 
-## Další problémy
-- Ústecký kraj - z PDF se nadaøí získat info o Litomìøicích
 
 
