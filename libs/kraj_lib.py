@@ -20,21 +20,21 @@ class web:
 
     kraj = self.kraj
     
-    if 'Česká Lípa' in td.text:
+    if 'okrese Česká Lípa' in td.text:
         val = td.findNext('td').text
         return { 'okres':'Česká Lípa', 'kraj': kraj,  'hodnota':val}
         
-    if 'Jablonec nad Nisou' in td.text:
+    if 'okrese Jablonec nad Nisou' in td.text:
         val = td.findNext('td').text
         return { 'okres':'Jablonec nad Nisou', 'kraj': kraj,  'hodnota':val}
 
     
-    if 'Liberec' in td.text:
+    if 'okrese Liberec' in td.text:
         val = td.findNext('td').text
         return { 'okres':'Liberec', 'kraj': kraj,  'hodnota':val}
 
  
-    if 'Semily' in td.text:
+    if 'okrese Semily' in td.text:
         val = td.findNext('td').text
         return { 'okres':'Semily', 'kraj': kraj,  'hodnota':val}
 
