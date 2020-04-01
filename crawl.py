@@ -44,7 +44,7 @@ kraje = [
   kraj_pha.web().crawl(),
   kraj_brn.web().crawl(),
   kraj_zl.web().crawl(),
-  kraj_msk..web().crawl(),
+  kraj_msk.web().crawl(),
   
   ]
 
