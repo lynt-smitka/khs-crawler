@@ -38,7 +38,7 @@ class web:
         'Opava',
         'Vítkov',
       ],
-      'Ostrava: [
+      'Ostrava': [
         'Ostrava',
       ]
     }
