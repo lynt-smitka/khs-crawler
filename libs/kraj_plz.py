@@ -22,24 +22,24 @@ class web:
     results=[]
     img = utils.get_img('http://www.khsplzen.cz/images/KHS/covid19/Plzensky_kraj.jpg')
     
-    val = image_to_string(self.num_trick(self.imgcrop(img,297,288)), config='digits').replace('number','').replace(' ','')
+    val = image_to_string(self.imgcrop(img,297,288), config='digits').replace('number','').replace(' ','')
     results.append({ 'okres':'Plzeň-město', 'kraj': self.kraj, 'hodnota':val})
     
-    val = image_to_string(self.num_trick(self.imgcrop(img,102,235)), config='digits').replace('number','').replace(' ','')
+    val = image_to_string(self.imgcrop(img,102,235), config='digits').replace('number','').replace(' ','')
     results.append({ 'okres':'Tachov', 'kraj': self.kraj, 'hodnota':val})
     
-    val = image_to_string(self.num_trick(self.imgcrop(img,268,190)), config='digits').replace('number','').replace(' ','')
+    val = image_to_string(self.imgcrop(img,268,190), config='digits').replace('number','').replace(' ','')
     results.append({ 'okres':'Plzeň-sever', 'kraj': self.kraj, 'hodnota':val})
     
-    val = image_to_string(self.num_trick(self.imgcrop(img,381,260)), config='digits').replace('number','').replace(' ','')
+    val = image_to_string(self.imgcrop(img,381,260), config='digits').replace('number','').replace(' ','')
     results.append({ 'okres':'Rokycany', 'kraj': self.kraj, 'hodnota':val})
     
-    val = image_to_string(self.num_trick(self.imgcrop(img,124,373)), config='digits').replace('number','').replace(' ','')
+    val = image_to_string(self.imgcrop(img,124,373), config='digits').replace('number','').replace(' ','')
     results.append({ 'okres':'Domažlice', 'kraj': self.kraj, 'hodnota':val})
     
-    val = image_to_string(self.num_trick(self.imgcrop(img,328,370)), config='digits').replace('number','').replace(' ','')
+    val = image_to_string(self.imgcrop(img,328,370), config='digits').replace('number','').replace(' ','')
     results.append({ 'okres':'Plzeň-jih', 'kraj': self.kraj, 'hodnota':val})
     
-    val = image_to_string(self.num_trick(self.imgcrop(img,268,494)), config='digits').replace('number','').replace(' ','')
+    val = image_to_string(self.imgcrop(img,268,494), config='digits').replace('number','').replace(' ','')
     results.append({ 'okres':'Klatovy', 'kraj': self.kraj, 'hodnota':val})
     return results
