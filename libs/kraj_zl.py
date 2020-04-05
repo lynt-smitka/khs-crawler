@@ -7,9 +7,10 @@ class web:
   def crawl(self):
     results = []
     pocet_okresu = 4
-    page = utils.get_url('http://www.khszlin.cz/25304-novy-koronavirus-2019-ncov')
+    url = 'http://www.khszlin.cz/25304-novy-koronavirus-2019-ncov'
+    page = utils.get_url(url)
     doc = page.select_one('a.pdf[href*=info_cov19]')['href']
-    url = urljoin('http://www.khszlin.cz/', doc)
+    url = urljoin(url, doc)
     lines = [line for line in utils.get_pdfminer(url) if len(line.replace(' ', '')) > 0]
     start_index = None
     distance_to_counts = None
