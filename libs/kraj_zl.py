@@ -1,39 +1,29 @@
 from . import utils
-# hodně beta
+from urllib.parse import urljoin
 
 class web:
-
-  kraj= "Zlínksý kraj"
+  kraj= 'Zlínský kraj'
   
   def crawl(self):
-    results=[]
-    page = utils.get_url('http://www.khszlin.cz/')
-    links = page.select('a.pdf')
-    doc=''
-
-    for link in links:
-        if "info_cov19" in link['href']:
-            doc = link['href']
+    results = []
+    pocet_okresu = 4
+    page = utils.get_url('http://www.khszlin.cz/25304-novy-koronavirus-2019-ncov')
+    doc = page.select_one('a.pdf[href*=info_cov19]')['href']
+    url = urljoin('http://www.khszlin.cz/', doc)
+    lines = [line for line in utils.get_pdfminer(url) if len(line.replace(' ', '')) > 0]
+    start_index = None
+    distance_to_counts = None
+    for i, line in enumerate(lines):
+      if line.startswith('Počet osob s onemocněním'):
+        start_index = i + 1
+        for next_i in range(start_index, len(lines) - i):
+          if (lines[next_i][0].isdigit()):
+            distance_to_counts = next_i - i - 1
             break
-            
-    lines = utils.get_pdfminer('http://www.khszlin.cz%s'%doc)
-    
-    def calculate_offset(lines):
-      i=0
-      p1=0
-      p2=0
-      for line in lines:
-        if 'okres Kroměříž' in line:
-            p1=i
-        if 'Zdroj: KHS ZK' in line:
-            p2=i+11
-            break
-        i=i+1
-      return (p1,p2)
+        break
+    if start_index and distance_to_counts:
+      for i in range(start_index, start_index + pocet_okresu):
+        name = lines[i].strip().replace('okres ', '')
+        results.append({'okres': name, 'kraj': self.kraj, 'hodnota': int(lines[i + distance_to_counts].strip())})
 
-    offset=calculate_offset(lines)
-
-
-    for i in range(0,4):
-      results.append({ 'okres':lines[offset[0]+i*2].replace('okres','').strip(), 'kraj': self.kraj, 'hodnota': lines[offset[1]+i*2]})
     return results
