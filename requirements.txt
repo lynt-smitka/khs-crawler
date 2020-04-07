@@ -1,0 +1,7 @@
+beautifulsoup4
+pdfminer.six
+pillow
+pygsheets
+pytesseract
+requests
+pandas
