@@ -2,20 +2,14 @@ from . import utils
 import re
 
 class web:
-
   kraj= "Praha"
   
   def crawl(self):
     results=[]
     soup = utils.get_url('http://www.hygpraha.cz/obsah/koronavirus_506_1.html')
-    links = soup.select('.content .vypis-item h3 a')
-    for a in links:
-        search = re.search('V Praze (\d+).*hodin', a.text)
-        if search:
-          val = search.groups()[0]
-          results.append({ 'okres':'Praha', 'kraj': self.kraj,  'hodnota':val})
-          break
-        
-
+    link = soup.select_one('.content .vypis-item h3 a')
+    search = re.search('V Praze ([\d ]+).*hodin', link.text)
+    if search:
+      val = int(search.groups()[0].replace(" ", "").strip())
+      results.append({'okres':'Praha', 'kraj': self.kraj, 'hodnota': val})        
     return results
-
