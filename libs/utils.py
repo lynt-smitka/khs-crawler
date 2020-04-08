@@ -31,14 +31,13 @@ def download_file(url):
 def get_img(url):
       return Image.open(download_file(url))
 
-def get_pdfminer(url):
-
+def get_pdfminer(url, laparams=LAParams()):
     output_string = StringIO()
     with open(download_file(url), 'rb') as in_file:
       parser = PDFParser(in_file)
       doc = PDFDocument(parser)
       rsrcmgr = PDFResourceManager()
-      device = TextConverter(rsrcmgr, output_string, laparams=LAParams())
+      device = TextConverter(rsrcmgr, output_string, laparams=laparams)
       interpreter = PDFPageInterpreter(rsrcmgr, device)
       for page in PDFPage.create_pages(doc):
         interpreter.process_page(page)
