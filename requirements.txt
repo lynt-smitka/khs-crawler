@@ -5,3 +5,4 @@ pygsheets
 pytesseract
 requests
 pandas
+camelot-py[cv]

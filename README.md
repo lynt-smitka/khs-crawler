@@ -18,7 +18,7 @@ V této fázi vývoje se jedná stále o prototyp skriptů pro crawling dat jedn
 ### Použité knihovny
 
  - **requests** + **BeautifulSoup** - parsování dat z webů
- - **pdfminer.six** - parsování dat z PDF  
+ - **pdfminer.six** a **camelot-py** - parsování dat z PDF  
  - **Pillow** - práce s obrázky
  - **pytesseract** - OCR pomocí [Tesseract](https://tesseract-ocr.github.io/)
 
