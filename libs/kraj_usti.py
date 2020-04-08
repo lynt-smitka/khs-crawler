@@ -17,8 +17,8 @@ class web:
         if line.startswith('(kumulativní počet)'):
             start_index = i + 1
     for i in range(start_index, start_index + pocet_okresu * 3, 3):
-        value = int(lines[i].strip())
-        name = lines[i+2].strip().replace('D ín', 'Děčín').replace('Litom ice', 'Litoměřice')
+        value = int(lines[i+1].strip())
+        name = lines[i].strip().replace('D ín', 'Děčín').replace('Litom ice', 'Litoměřice')
         results.append({'okres': name, 'kraj': self.kraj, 'hodnota': value})
 
     return results
