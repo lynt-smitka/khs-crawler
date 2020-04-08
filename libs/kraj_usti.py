@@ -1,25 +1,21 @@
-from . import utils
-from pdfminer.layout import LAParams
+from .utils import download_file
+import camelot
+
 
 class web:
-  kraj= 'Ústecký kraj'
+    kraj = "Ústecký kraj"
 
-  def crawl(self):
-    url = 'http://www.khsusti.cz/php/kousky/covid19/pocet_testovanych_osob_na_covid19_ustecky_kraj.pdf'
-    pocet_okresu = 7
-    results=[]
-    laparams=LAParams()
-    laparams.boxes_flow=None
-    lines = [line for line in utils.get_pdfminer(url, laparams) if len(line.replace(' ', '')) > 0]
-    start_index = None
-    distance_to_counts = None
-    for i, line in enumerate(lines):
-        if line.startswith('(kumulativní počet)'):
-            start_index = i + 1
-    for i in range(start_index, start_index + pocet_okresu * 3, 3):
-        value = int(lines[i+1].strip())
-        name = lines[i].strip().replace('D ín', 'Děčín').replace('Litom ice', 'Litoměřice')
-        results.append({'okres': name, 'kraj': self.kraj, 'hodnota': value})
-
-    return results
-
+    def crawl(self):
+        pocet_okresu = 7
+        results = []
+        url = "http://www.khsusti.cz/php/kousky/covid19/pocet_testovanych_osob_na_covid19_ustecky_kraj.pdf"
+        filename = download_file(url, ".pdf")
+        tables = camelot.read_pdf(filename)
+        data = tables[1].df.to_dict("records")
+        for row in data[1:1+pocet_okresu]:
+            results.append({
+              "okres": row[0],
+              "kraj": self.kraj,
+              "hodnota": int(row[1])
+            })
+        return results
