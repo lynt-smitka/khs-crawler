@@ -1,39 +1,24 @@
 from . import utils
-# hodně beta
+import camelot
+from urllib.parse import urljoin
+
 
 class web:
+    kraj = "Jihomoravský kraj"
 
-  kraj= "Jihomoravský kraj"
-  
-  def crawl(self):
-    results=[]
-    page = utils.get_url('http://www.khsbrno.cz/admin/upload/aktuality/?C=M;O=D')
-    links = page.select('td a')
-    doc=''
-
-    for link in links:
-        if "14_" in link['href']:
-            doc = link['href']
-            break
-            
-    lines = utils.get_pdfminer('http://www.khsbrno.cz/admin/upload/aktuality/%s'%doc)
-       
-    
-    def calculate_offset(lines):
-      i=0
-      p1=0
-      p2=0
-      for line in lines:
-        if 'Brno-město' in line:
-            p1=i
-        if '(první případy ' in line:
-            p2=i+2
-        i=i+1
-      return (p1,p2)
-
-    offset=calculate_offset(lines)
-
-    for i in range(0,7):
-      results.append({ 'okres':lines[offset[0]+i].strip(), 'kraj': self.kraj, 'hodnota': lines[offset[0]+9+i]})
-
-    return results
+    def crawl(self):
+        pocet_okresu = 7
+        results = []
+        url = "http://www.khsbrno.cz/admin/upload/aktuality/?C=M;O=D"
+        page = utils.get_url(url)
+        doc = page.select_one("a[href$=pdf]")["href"]
+        filename = utils.download_file(urljoin(url, doc), ".pdf")
+        tables = camelot.read_pdf(filename)
+        data = tables[0].df.to_dict("records")
+        for row in data[1:1+pocet_okresu]:
+            results.append({
+              "okres": row[0],
+              "kraj": self.kraj,
+              "hodnota": int(row[1])
+            })
+        return results
