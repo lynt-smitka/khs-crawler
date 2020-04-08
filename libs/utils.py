@@ -20,10 +20,10 @@ def get_url(url):
   if r.status_code == requests.codes.ok:
     return BeautifulSoup(r.text, 'html.parser')
 
-def download_file(url):
+def download_file(url, ext=""):
     r = requests.get(url)
     if r.status_code == requests.codes.ok:
-      hash = hashlib.md5(url.encode('utf-8')).hexdigest()
+      hash = hashlib.md5(url.encode('utf-8')).hexdigest() + ext
       open('./tmp/%s'%hash, 'wb').write(r.content)
       return './tmp/%s'%hash
     
