@@ -15,13 +15,10 @@ class web:
     start_index = None
     distance_to_counts = None
     for i, line in enumerate(lines):
-      if line.startswith('Počet osob s onemocněním'):
-        start_index = i + 1
-        for next_i in range(start_index, len(lines) - i):
-          if (lines[next_i][0].isdigit()):
-            distance_to_counts = next_i - i - 1
-            break
+      if line.startswith('okres'):
+        start_index = i
         break
+    distance_to_counts = pocet_okresu * 2
     if start_index and distance_to_counts:
       for i in range(start_index, start_index + pocet_okresu):
         name = lines[i].strip().replace('okres ', '')
