@@ -17,9 +17,9 @@ class web:
             continue
         offset = True
         if 'Karlovy Vary' in l:
-            results.append({ 'okres':'Karlovy Vary', 'kraj': self.kraj, 'hodnota':l.split()[-1]})
+            results.append({ 'okres':'Karlovy Vary', 'kraj': self.kraj, 'hodnota':int(l.split()[-1])})
         if 'Sokolov' in l:
-            results.append({ 'okres':'Sokolov', 'kraj': self.kraj, 'hodnota':l.split()[-1]})
+            results.append({ 'okres':'Sokolov', 'kraj': self.kraj, 'hodnota':int(l.split()[-1])})
         if 'Cheb' in l:
-            results.append({ 'okres':'Cheb', 'kraj': self.kraj, 'hodnota':l.split()[-1]})
+            results.append({ 'okres':'Cheb', 'kraj': self.kraj, 'hodnota':int(l.split()[-1])})
     return results

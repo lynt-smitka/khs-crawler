@@ -22,26 +22,26 @@ class web:
     
     if 'Jihlava' in td.text:
         val = td.findNext('td').text
-        return { 'okres':'Jihlava', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Jihlava', 'kraj': kraj,  'hodnota':int(val)}
         
     if 'Brod' in td.text:
         val = td.findNext('td').text
-        return { 'okres':'Havlíčkův Brod', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Havlíčkův Brod', 'kraj': kraj,  'hodnota':int(val)}
 
     
     if 'Pelh' in td.text:
         val = td.findNext('td').text
-        return { 'okres':'Pelhřimov', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Pelhřimov', 'kraj': kraj,  'hodnota':int(val)}
 
  
     if 'okrese T' in td.text:
         val = td.findNext('td').text
-        return { 'okres':'Třebíč', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Třebíč', 'kraj': kraj,  'hodnota':int(val)}
 
         
     if 'zavou' in td.text:
         val = td.findNext('td').text
-        return { 'okres':'Žďár nad Sázavou', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Žďár nad Sázavou', 'kraj': kraj,  'hodnota':int(val)}
         
 
     return False

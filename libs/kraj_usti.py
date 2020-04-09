@@ -13,7 +13,6 @@ class web:
     lines = [line for line in utils.get_pdfminer(url, laparams) if len(line.replace(' ', '')) > 0]
     start_index = None
     distance_to_counts = None
-    print(lines)
     for i, line in enumerate(lines):
         if line.startswith('Děčín'):
             start_index = i

@@ -22,21 +22,21 @@ class web:
     
     if 'Pardubice:' in td.text:
         val = td.text.split()[-1]
-        return { 'okres':'Pardubice', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Pardubice', 'kraj': kraj,  'hodnota':int(val)}
         
     if 'Chrudim' in td.text:
         val = td.text.split()[-1]
-        return { 'okres':'Chrudim', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Chrudim', 'kraj': kraj,  'hodnota':int(val)}
 
     
     if 'Svitavy' in td.text:
         val = td.text.split()[-1]
-        return { 'okres':'Svitavy', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Svitavy', 'kraj': kraj,  'hodnota':int(val)}
 
  
     if 'Ústí nad Orlicí' in td.text:
         val = td.text.split()[-1]
-        return { 'okres':'Ústí nad Orlicí', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Ústí nad Orlicí', 'kraj': kraj,  'hodnota':int(val)}
 
 
     return False

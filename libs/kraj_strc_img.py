@@ -23,40 +23,40 @@ class web:
     img = utils.get_img('http://www.khsstc.cz/Admin/_upload/images/1/COVID%2027_3.jpg')
     
     val = image_to_string(self.num_trick(self.imgcrop(img,327,366))).replace('number','').replace(' ','')
-    results.append({ 'okres':'Rakovník', 'kraj': self.kraj, 'hodnota':val})
+    results.append({ 'okres':'Rakovník', 'kraj': self.kraj, 'hodnota':int(val)})
     
     val = image_to_string(self.num_trick(self.imgcrop(img,472,260))).replace('number','').replace(' ','')
-    results.append({ 'okres':'Kladno', 'kraj': self.kraj, 'hodnota':val})
+    results.append({ 'okres':'Kladno', 'kraj': self.kraj, 'hodnota':int(val)})
     
     val = image_to_string(self.num_trick(self.imgcrop(img,630,208))).replace('number','').replace(' ','')
-    results.append({ 'okres':'Mělník', 'kraj': self.kraj, 'hodnota':val})
+    results.append({ 'okres':'Mělník', 'kraj': self.kraj, 'hodnota':int(val)})
     
     val = image_to_string(self.num_trick(self.imgcrop(img,819,171))).replace('number','').replace(' ','')
-    results.append({ 'okres':'Mladá Boleslav', 'kraj': self.kraj, 'hodnota':val})
+    results.append({ 'okres':'Mladá Boleslav', 'kraj': self.kraj, 'hodnota':int(val)})
     
     val = image_to_string(self.num_trick(self.imgcrop(img,878,312))).replace('number','').replace(' ','')
-    results.append({ 'okres':'Nymburk', 'kraj': self.kraj, 'hodnota':val})
+    results.append({ 'okres':'Nymburk', 'kraj': self.kraj, 'hodnota':int(val)})
     
     val = image_to_string(self.num_trick(self.imgcrop(img,895,411))).replace('number','').replace(' ','')
-    results.append({ 'okres':'Kolín', 'kraj': self.kraj, 'hodnota':val})
+    results.append({ 'okres':'Kolín', 'kraj': self.kraj, 'hodnota':int(val)})
     
     val = image_to_string(self.num_trick(self.imgcrop(img,950,507))).replace('number','').replace(' ','')
-    results.append({ 'okres':'Kutná Hora', 'kraj': self.kraj, 'hodnota':val})
+    results.append({ 'okres':'Kutná Hora', 'kraj': self.kraj, 'hodnota':int(val)})
     
     val = image_to_string(self.num_trick(self.imgcrop(img,790,614))).replace('number','').replace(' ','')
-    results.append({ 'okres':'Benešov', 'kraj': self.kraj, 'hodnota':val})
+    results.append({ 'okres':'Benešov', 'kraj': self.kraj, 'hodnota':int(val)})
     
     val = image_to_string(self.num_trick(self.imgcrop(img,495,626))).replace('number','').replace(' ','')
-    results.append({ 'okres':'Příbram', 'kraj': self.kraj, 'hodnota':val})    
+    results.append({ 'okres':'Příbram', 'kraj': self.kraj, 'hodnota':int(val)})    
     
     val = image_to_string(self.num_trick(self.imgcrop(img,431,483))).replace('number','').replace(' ','')
-    results.append({ 'okres':'Beroun', 'kraj': self.kraj, 'hodnota':val})
+    results.append({ 'okres':'Beroun', 'kraj': self.kraj, 'hodnota':int(val)})
 
     val = image_to_string(self.num_trick(self.imgcrop(img,746,438))).replace('number','').replace(' ','')
-    results.append({ 'okres':'Praha-východ', 'kraj': self.kraj, 'hodnota':val})
+    results.append({ 'okres':'Praha-východ', 'kraj': self.kraj, 'hodnota':int(val)})
     
     val = image_to_string(self.num_trick(self.imgcrop(img,588,482))).replace('number','').replace(' ','')
-    results.append({ 'okres':'Praha-západ', 'kraj': self.kraj, 'hodnota':val})
+    results.append({ 'okres':'Praha-západ', 'kraj': self.kraj, 'hodnota':int(val)})
 
     
     return results

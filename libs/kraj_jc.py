@@ -22,36 +22,36 @@ class web:
     
     if 'Českobudějovicko' in td.text:
         val = td.findNext('td').text.split()[0]
-        return { 'okres':'České Budějovice', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'České Budějovice', 'kraj': kraj,  'hodnota':int(val)}
         
     if 'Českokrumlovsko' in td.text:
         val = td.findNext('td').text.split()[0]
-        return { 'okres':'Český Krumlov', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Český Krumlov', 'kraj': kraj,  'hodnota':int(val)}
 
     
     if 'Jindřichohradecko' in td.text:
         val = td.findNext('td').text.split()[0]
-        return { 'okres':'Jindřichův Hradec', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Jindřichův Hradec', 'kraj': kraj,  'hodnota':int(val)}
 
  
     if 'Písecko' in td.text:
         val = td.findNext('td').text.split()[0]
-        return { 'okres':'Písek', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Písek', 'kraj': kraj,  'hodnota':int(val)}
 
         
     if 'Prachaticko' in td.text:
         val = td.findNext('td').text.split()[0]
-        return { 'okres':'Prachatice', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Prachatice', 'kraj': kraj,  'hodnota':int(val)}
         
         
          
     if 'Strakonicko' in td.text:
         val = td.findNext('td').text.split()[0]
-        return { 'okres':'Strakonice', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Strakonice', 'kraj': kraj,  'hodnota':int(val)}
 
         
     if 'Táborsko' in td.text:
         val = td.findNext('td').text.split()[0]
-        return { 'okres':'Tábor', 'kraj': kraj,  'hodnota':val}
+        return { 'okres':'Tábor', 'kraj': kraj,  'hodnota':int(val)}
 
     return False

@@ -17,6 +17,6 @@ class web:
       results.append({
         'okres': feature['attributes']['nazev'],
         'kraj': self.kraj,
-        'hodnota': feature['attributes']['PocetPripadu']
+        'hodnota': int(feature['attributes']['PocetPripadu'])
       })
     return results
