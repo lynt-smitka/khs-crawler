@@ -17,7 +17,6 @@ class web:
           cropped.putpixel((px_x, px_y), (255, 255))
         if px < (100, 255):
           cropped.putpixel((px_x, px_y), (0, 255))
-    cropped = cropped.resize([int(2 * s) for s in cropped.size], Image.NEAREST)
     return cropped
   
   def crawl(self):
