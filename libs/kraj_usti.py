@@ -13,12 +13,14 @@ class web:
     lines = [line for line in utils.get_pdfminer(url, laparams) if len(line.replace(' ', '')) > 0]
     start_index = None
     distance_to_counts = None
+    print(lines)
     for i, line in enumerate(lines):
-        if line.startswith('(kumulativní počet)'):
-            start_index = i + 1
+        if line.startswith('Děčín'):
+            start_index = i
+            break
     for i in range(start_index, start_index + pocet_okresu * 3, 3):
         value = int(lines[i+1].strip())
-        name = lines[i].strip().replace('D ín', 'Děčín').replace('Litom ice', 'Litoměřice')
+        name = lines[i].strip()
         results.append({'okres': name, 'kraj': self.kraj, 'hodnota': value})
 
     return results
